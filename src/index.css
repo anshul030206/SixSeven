@@ -1,0 +1,172 @@
+:root {
+  /* HR Bot Variables */
+  --primary: #2d5a7b;
+  --primary-dark: #1e3d54;
+  --accent: #ff6b35;
+  --accent-light: #ff8c5a;
+  --bg: #0a0e17;
+  --surface: #141b2b;
+  --surface-light: #1e2838;
+  --text: #e8edf4;
+  --text-primary: #e8edf4;
+  /* Added for compatibility */
+  --text-muted: #8a9ab0;
+  --text-accent: #ff6b35;
+  /* Added for compatibility */
+  --border: #2a3648;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #ef4444;
+
+  /* Recommender System Variables (Inferred/New) */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --bg-card: #202020;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+label {
+  font-family: 'Space Mono', monospace, sans-serif;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+/* Scrollbar Hiding */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(45, 90, 123, 0.3);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: white;
+}
+
+/* HR Bot Specifics (Keep from previous) */
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Scrollbar for non-hidden elements */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+}
+
+/* Netflix Row Specifics */
+.netflix-card:hover {
+  transform: scale(1.05);
+  /* Slight grow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.netflix-card:hover .hover-details {
+  opacity: 1 !important;
+}
+
+.btn-play:hover {
+  background: #e6e6e6 !important;
+  transform: scale(1.05);
+}
